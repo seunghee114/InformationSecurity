@@ -8,6 +8,7 @@ public class code {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
 		// Arrays that stores input string.
 		String[] caesar_text = new String[3];
 		String[] xor_text = new String[3];
@@ -41,15 +42,15 @@ public class code {
 		for (int i = 0; i < len; i++) {
 			int temp = plain.charAt(i);
 			if (65 <= temp && temp <= 90) { // upper case
-				int n = temp - 'A' + key;
-				if (n / 26 != 0) { // if n is out of range
+				int n = temp - 'A' + key; // n : Alphabet index of encrypted character.
+				if (n / 26 != 0) { // if n is out of the range of alphabet
 					n %= 26;
 				}
 				cipher += (char) (n + 'A');
 			}
 			if (97 <= temp && temp <= 122) { // lower case
-				int n = temp - 'a' + key;
-				if (n / 26 != 0) { // if n is out of range
+				int n = temp - 'a' + key; // n : Alphabet index of encrypted character.
+				if (n / 26 != 0) { // if n is out of the range of alphabet
 					n %= 26;
 				}
 				cipher += (char) (n + 'a');
